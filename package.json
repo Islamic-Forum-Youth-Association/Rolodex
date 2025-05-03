@@ -1,22 +1,18 @@
 {
-  "name": "rolodex",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "private": true,
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
-  "dependencies": {
-    "@supabase/supabase-js": "^2.49.4",
-    "dotenv": "^16.5.0",
-    "react-native-url-polyfill": "^2.0.0"
+    "name": "expo-supabase-monorepo",
+    "private": true,
+    "version": "1.0.0",
+    "workspaces": [
+      "apps/*",
+      "packages/*"
+    ],
+    "scripts": {
+      "dev": "yarn workspace mobile start",
+      "build": "echo 'Use Expo CLI to build your app (e.g., expo build:android)'",
+      "clean": "rimraf node_modules && rimraf apps/**/node_modules && rimraf packages/**/node_modules && yarn install"
+    },
+    "devDependencies": {
+      "rimraf": "^5.0.0"
+    }
   }
-}
+  

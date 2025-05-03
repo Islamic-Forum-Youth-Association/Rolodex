@@ -1,12 +1,18 @@
 {
   "name": "supabase",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "client.js",
+  "types": "client.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.49.4"
+  }
+  
 }
+

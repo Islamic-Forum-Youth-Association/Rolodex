@@ -5,6 +5,9 @@ import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+import { supabase } from 'supabase'; // Automatically resolved from packages/supabase
+import Constants from 'expo-constants';
+const { supabaseUrl, supabaseAnonKey } = Constants.expoConfig?.extra || {};
 
 export default function HomeScreen() {
   return (
