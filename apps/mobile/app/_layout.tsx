@@ -22,6 +22,28 @@ export default function RootLayout() {
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="+not-found" />
+        <Stack.Screen
+          name="settings/account"
+          options={{
+            title: 'Account Settings', // Title for the screen
+            headerBackTitle: 'Settings', // Back button label
+          }}
+        />
+        <Stack.Screen
+          name="settings/privacy"
+          options={{
+            title: 'Privacy Settings', // Title for the screen
+            headerBackTitle: 'Settings', // Back button label
+          }}
+        />
+
+        <Stack.Screen
+                name="profile"
+                options={{
+                  title: 'Profile',
+                  headerBackTitle: 'Settings', // Back button label
+                }}
+              />
       </Stack>
       <StatusBar style="auto" />
     </ThemeProvider>
