@@ -1,4 +1,8 @@
-{
+import "dotenv/config";
+const appJson = require("./app.json");
+
+export default {
+  
   "expo": {
     "name": "mobile",
     "slug": "mobile",
@@ -24,7 +28,10 @@
       "favicon": "./assets/images/favicon.png"
     },
     
-
+    "extra": {
+      "EXPO_PUBLIC_SUPABASE_URL": "https://agwrpiigocvecpmtjfpt.supabase.co",
+      "EXPO_PUBLIC_SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"
+    }
 },
     "plugins": [
       "expo-router",
@@ -41,5 +48,4 @@
     "experiments": {
       "typedRoutes": true
     }
-  }
-
+  };
