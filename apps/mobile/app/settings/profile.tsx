@@ -1,44 +1,51 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet, ActivityIndicator } from 'react-native';
-import { getCurrentUser } from '@packages/supabase/auth'
-import { fetchPermissions } from '@packages/supabase/permissions';
+// import { getCurrentUser } from '../../supabase/auth';
+// import { fetchPermissions } from '../../supabase/permissions';
 const ProfileScreen = () => {
   const [user, setUser] = useState(null);
   const [permissions, setPermissions] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const loadProfile = async () => {
-      try {
-        const userData = await getCurrentUser();
-        setUser(userData.user);
+  // useEffect(() => {
+  //   const loadProfile = async () => {
+  //     try {
+  //       const userData = await getCurrentUser();
+  //       setUser(userData.user);
 
-        if (userData.user) {
-          const userPermissions = await fetchPermissions(userData.user.id);
-          setPermissions(userPermissions);
-        }
-      } catch (error) {
-        console.error('Error loading profile:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
+  //       if (userData.user) {
+  //         const userPermissions = await fetchPermissions(userData.user.id);
+  //         setPermissions(userPermissions);
+  //       }
+  //     } catch (error) {
+  //       console.error('Error loading profile:', error);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
 
-    loadProfile();
-  }, []);
+  //   loadProfile();
+  // }, []);
 
-  if (loading) {
-    return <ActivityIndicator size="large" color="#007BFF" />;
-  }
+  // if (loading) {
+  //   return <ActivityIndicator size="large" color="#007BFF" />;
+  // }
 
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Profile</Text>
-      <Text>Name: {user?.email}</Text>
+      <Text>Name: 
+      {//user?.email
+      }
+      </Text>
       <Text>Permissions:</Text>
-      {permissions.map((perm) => (
-        <Text key={perm.id}>{perm.permission}</Text>
-      ))}
+      {/* {permissions.map((perm) => (
+        // <Text key={
+        // //  perm.id
+        // }>{
+        //  // perm.permission
+        //   }</Text>
+      ))} */}
     </View>
   );
 };
